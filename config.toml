@@ -1,4 +1,4 @@
-baseURL = "https://clpatterson.github.io"
+baseURL = "https://clpatterson.github.io/"
 languageCode = "en-us"
 title = "Charlie Patterson"
 theme = "ezhil"
