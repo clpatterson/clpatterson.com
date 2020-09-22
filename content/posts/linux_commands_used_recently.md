@@ -1,7 +1,8 @@
 ---
-title: "Linux_commands_used_recently"
+title: "Linux Commands of the Last 10 days"
 date: 2020-09-08T16:58:06-04:00
 draft: true
+description: "Taking a few minutes to learn a bit more about commands I'm using."
 ---
 
 # A list of Linux commands I have used recently

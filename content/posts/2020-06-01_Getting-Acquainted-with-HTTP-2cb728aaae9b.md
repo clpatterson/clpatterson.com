@@ -1,6 +1,6 @@
 ---
 title: Getting Acquainted with HTTP
-description: What is http?
+description: Learning about HTTP by seeing it in the real world.
 date: '2020-06-01T18:48:35.145Z'
 categories: []
 keywords: []

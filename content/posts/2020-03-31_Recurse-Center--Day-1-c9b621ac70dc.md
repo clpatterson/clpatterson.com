@@ -1,8 +1,6 @@
 ---
 title: 'Recurse Center: Day 1'
-description: >-
-  This is the first in a series of posts to record and reflect on my experience
-  at Recurse Center(RC) in NYC (now virtual). Posts will focus…
+description: "Reflecting on the first day of RC."
 date: '2020-03-31T01:33:38.182Z'
 categories: []
 keywords: []

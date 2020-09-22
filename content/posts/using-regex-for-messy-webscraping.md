@@ -2,6 +2,7 @@
 title: "Using Regex for Messy Webscraping"
 date: 2018-07-12T15:36:17-04:00
 draft: false
+description: "When you scrape a site with hand-coded, inconsistent html where else can you turn?"
 ---
 
 

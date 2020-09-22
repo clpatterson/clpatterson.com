@@ -2,6 +2,7 @@
 title: "Sorting an Array by Absolute Value"
 date: 2020-09-17T13:51:25-04:00
 draft: False
+description: "Implementing selection sort or using a built-in function."
 ---
 
 I tried out [Pramp](https://www.pramp.com/) this morning and encountered an interesting question. The question can be solved with one line of code or by implementing a sorting algorithm. I implemented a selection sorting algorithm with the help of my partner and was delighted to learn about the one-liner approach afterwards. So in this post I'm going to review the problem and explain both approaches. Below is the problem prompt:

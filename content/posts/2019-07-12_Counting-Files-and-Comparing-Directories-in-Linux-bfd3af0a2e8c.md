@@ -1,8 +1,6 @@
 ---
 title: Counting Files and Comparing Directories in Linux
-description: >-
-  I’ve been exploring the /usr directory as a part of a mission to better
-  understand the Linux Filesystem Hierarchy Standard — the…
+description: "Using pipes, wc, and diffs for cli fun."
 date: '2019-07-12T16:12:42.824Z'
 categories: []
 keywords: []

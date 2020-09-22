@@ -2,6 +2,7 @@
 title: "Deduplication with Fuzzywuzzy and Stanford CoreNLP"
 date: 2018-03-21T15:55:54-04:00
 draft: false
+description: "Using open source tools to clean scraped data and eliminate duplicate Chinese Corruption reports."
 ---
 
 Find and eliminating duplicates is an important part of data collection. For a few weeks now I’ve been helping an organization in New York collect official reports on corruption in China. Solving deduplication has been a key component of that effort. I’ve written this post to better understanding my own solution, but also in the name of sharing. I hope it’s helpful to others on their own self-taught journey.

@@ -1,8 +1,6 @@
 ---
 title: 'Recurse Center: Day 25'
-description: >-
-  Four weeks of (Virtual) Recurse Center will have pasted Friday. How has the
-  experience been so far? Am I getting the most out of RC? What…
+description: "Reflections from day 25 of RC."
 date: '2020-04-23T16:52:09.585Z'
 categories: []
 keywords: []
