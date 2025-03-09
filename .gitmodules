@@ -1,0 +1,3 @@
+[submodule "themes/ezhil-fork"]
+	path = themes/ezhil-fork
+	url = https://github.com/clpatterson/ezhil.git
