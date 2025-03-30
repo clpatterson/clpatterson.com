@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Charlie Patterson</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Charlie Patterson</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <copyright>© Copyright 2025 Charlie Patterson</copyright>
+    <lastBuildDate>Thu, 17 Sep 2020 13:51:25 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sorting an Array by Absolute Value</title>
+      <link>http://localhost:1313/posts/pramp_interview_1/</link>
+      <pubDate>Thu, 17 Sep 2020 13:51:25 -0400</pubDate>
+      <guid>http://localhost:1313/posts/pramp_interview_1/</guid>
+      <description>&lt;p&gt;I tried out &lt;a href=&#34;https://www.pramp.com/&#34;&gt;Pramp&lt;/a&gt; this morning and encountered an interesting question. The question can be solved with one line of code or by implementing a sorting algorithm. I implemented a selection sorting algorithm with the help of my partner and was delighted to learn about the one-liner approach afterwards. So in this post I&amp;rsquo;m going to review the problem and explain both approaches. Below is the problem prompt:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Getting Acquainted with HTTP</title>
+      <link>http://localhost:1313/posts/@pattersoncharlesl/getting-acquainted-with-http-2cb728aaae9b/</link>
+      <pubDate>Mon, 01 Jun 2020 18:48:35 +0000</pubDate>
+      <guid>http://localhost:1313/posts/@pattersoncharlesl/getting-acquainted-with-http-2cb728aaae9b/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;img/1__O5yBmiCvFjL9WJbjKl0FMA.jpeg&#34; alt=&#34;Tim Berners Lee, the leader of a group at CERN that developed http, looking fondly upon his creation at work.&#34;&gt;&#xA;Tim Berners Lee, the leader of a group at CERN that developed http, looking fondly upon his creation at work.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Recurse Center: Day 25</title>
+      <link>http://localhost:1313/posts/@pattersoncharlesl/recurse-center-day-25-f1c2648cfec6/</link>
+      <pubDate>Thu, 23 Apr 2020 16:52:09 +0000</pubDate>
+      <guid>http://localhost:1313/posts/@pattersoncharlesl/recurse-center-day-25-f1c2648cfec6/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;img/1__KQcMEgzn0Zfn04cyDGyiRQ.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Four weeks of (Virtual) Recurse Center will have pasted Friday. How has the experience been so far? Am I getting the most out of RC? What have I done? How have I done it? How could things be better or worse?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Recurse Center: Day 1</title>
+      <link>http://localhost:1313/posts/@pattersoncharlesl/recurse-center-day-1-c9b621ac70dc/</link>
+      <pubDate>Tue, 31 Mar 2020 01:33:38 +0000</pubDate>
+      <guid>http://localhost:1313/posts/@pattersoncharlesl/recurse-center-day-1-c9b621ac70dc/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;img/1__bU__CRTaD3nr0KGJI__G01__g.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;This is the first in a series of posts to record and reflect on my experience at &lt;a href=&#34;https://www.recurse.com/&#34;&gt;Recurse Center&lt;/a&gt;(RC) in NYC (now virtual). Posts will focus on what I’m doing, how I’m doing it, and the effects of those choices on my learning and enthusiasm. Neither length nor polish is important.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Counting Files and Comparing Directories in Linux</title>
+      <link>http://localhost:1313/posts/@pattersoncharlesl/counting-files-and-comparing-directories-in-linux-bfd3af0a2e8c/</link>
+      <pubDate>Fri, 12 Jul 2019 16:12:42 +0000</pubDate>
+      <guid>http://localhost:1313/posts/@pattersoncharlesl/counting-files-and-comparing-directories-in-linux-bfd3af0a2e8c/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;img/1__GINcfpYew8M2__XS9Jubdhg.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;I’ve been exploring the /usr directory as a part of a mission to better understand the Linux Filesystem Hierarchy Standard — the topography of the modern server. One question that arose during my travels through the filesystem was how many files are in /bin vs. /user/bin? That’s when I discovered this helpful pipeline.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Using Regex for Messy Webscraping</title>
+      <link>http://localhost:1313/posts/using-regex-for-messy-webscraping/</link>
+      <pubDate>Thu, 12 Jul 2018 15:36:17 -0400</pubDate>
+      <guid>http://localhost:1313/posts/using-regex-for-messy-webscraping/</guid>
+      <description>&lt;p&gt;People have strong feelings about using regex for parsing html. I understand. When things are as they should be, scraping html using xpaths or css selectors is way better. Python packages like lxml and beautifulsoup do a great job. But things aren’t always as they should be…&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Deduplication with Fuzzywuzzy and Stanford CoreNLP</title>
+      <link>http://localhost:1313/posts/deduplication_with_fuzzywuzzy/</link>
+      <pubDate>Wed, 21 Mar 2018 15:55:54 -0400</pubDate>
+      <guid>http://localhost:1313/posts/deduplication_with_fuzzywuzzy/</guid>
+      <description>&lt;p&gt;Find and eliminating duplicates is an important part of data collection. For a few weeks now I’ve been helping an organization in New York collect official reports on corruption in China. Solving deduplication has been a key component of that effort. I’ve written this post to better understanding my own solution, but also in the name of sharing. I hope it’s helpful to others on their own self-taught journey.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

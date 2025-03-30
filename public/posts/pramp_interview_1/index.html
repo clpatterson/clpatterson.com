@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Sorting an Array by Absolute Value - Charlie Patterson</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:url" content="http://localhost:1313/posts/pramp_interview_1/">
+  <meta property="og:site_name" content="Charlie Patterson">
+  <meta property="og:title" content="Sorting an Array by Absolute Value">
+  <meta property="og:description" content="Implementing selection sort or using a built-in function.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-09-17T13:51:25-04:00">
+    <meta property="article:modified_time" content="2020-09-17T13:51:25-04:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sorting an Array by Absolute Value">
+  <meta name="twitter:description" content="Implementing selection sort or using a built-in function.">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" media="(prefers-color-scheme: dark)" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<base href="http://localhost:1313/">
+	<h1 class="site-title"><a href="http://localhost:1313/">Charlie Patterson</a></h1>
+	<div class="site-description"><h2>Bits of code, reflections, and projects for the sake of learning</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/clpatterson" title="Github"><i data-feather="github"></i></a><a href="https://www.linkedin.com/in/pattersoncharlesl/" title="Linkedin"><i data-feather="linkedin"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Blog</a>
+			</li>
+			
+			<li>
+				<a href="/learning-journal">Learning Journal</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Sorting an Array by Absolute Value</h1>
+			<div class="meta">Posted at &mdash; Sep 17, 2020</div>
+		</div>
+
+		<div class="markdown">
+			<p>I tried out <a href="https://www.pramp.com/">Pramp</a> this morning and encountered an interesting question. The question can be solved with one line of code or by implementing a sorting algorithm. I implemented a selection sorting algorithm with the help of my partner and was delighted to learn about the one-liner approach afterwards. So in this post I&rsquo;m going to review the problem and explain both approaches. Below is the problem prompt:</p>
+<h3 id="the-question">The Question</h3>
+<p><strong>Absolute Value Sort:</strong></p>
+<p>Given an array of integers <code>arr</code>, write a function <code>absSort(arr)</code> that
+sorts the array according to the absolute values of the numbers in <code>arr</code>.
+If two numbers have the same absolute value, sort them according to sign,
+where the negative numbers come before the positive numbers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Example</span>
+</span></span><span style="display:flex;"><span>input: arr <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">7</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>output: [<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">7</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Constraints:</span>
+</span></span><span style="display:flex;"><span>[time limit] <span style="color:#ae81ff">5000</span>ms
+</span></span><span style="display:flex;"><span>[input] array<span style="color:#f92672">.</span>integer arr
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">&lt;=</span> arr<span style="color:#f92672">.</span>length <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>[output] array<span style="color:#f92672">.</span>integer
+</span></span></code></pre></div><h3 id="implementing-selection-sort">Implementing Selection Sort</h3>
+<p>Selection sort is not the most efficient sorting algorithm (O(n^2) vs. O(n log n) for merge sort), but it is relatively straight forward and easy to implement. In selection sort you break the array into two subarrays, sorted and unsorted. The sorted subarray is created by the first pass through the array. You begin the pass at the 0th index, storing that number and its index as the current_minimum, then compare it to every other number in the array, overwriting the current_minimum if you find a smaller number. When all numbers have been compared, you take the smallest number (stored in current_minimum) and swap that number and the number at the start of the pass (in this case the 0th index). Then you repeat the process. Over time the sorted subarray grows and overtakes the unsorted subarray, resulting in a final sorted array.</p>
+<p>As you can see below, this algorithm is implemented with a nested for loop. The first for loop tracks the start of our current pass and the second for loop carries out the search for the next smallest number (using absolute value and a number&rsquo;s sign).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">absSort</span>(arr):
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(arr)): <span style="color:#75715e"># Starting index of current pass</span>
+</span></span><span style="display:flex;"><span>    cur_min <span style="color:#f92672">=</span> (arr[i],i) <span style="color:#75715e"># reset min at start of each pass</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> idx <span style="color:#f92672">in</span> range(i, len(arr)): <span style="color:#75715e"># For each pass, compare each remaining elements</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> abs(arr[idx]) <span style="color:#f92672">&lt;</span> abs(cur_min[<span style="color:#ae81ff">0</span>]):
+</span></span><span style="display:flex;"><span>          cur_min <span style="color:#f92672">=</span> (arr[idx], idx)
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">elif</span> abs(arr[idx]) <span style="color:#f92672">==</span> abs(cur_min[<span style="color:#ae81ff">0</span>]):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> arr[idx] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>: <span style="color:#75715e"># check sign, negative goes first</span>
+</span></span><span style="display:flex;"><span>          cur_min <span style="color:#f92672">=</span> (arr[idx], idx)
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">continue</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Perform swap after each pass</span>
+</span></span><span style="display:flex;"><span>    prev <span style="color:#f92672">=</span> arr[i]
+</span></span><span style="display:flex;"><span>    arr[i] <span style="color:#f92672">=</span> cur_min[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>    arr[cur_min[<span style="color:#ae81ff">1</span>]] <span style="color:#f92672">=</span> prev
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> arr
+</span></span></code></pre></div><h3 id="using-sort-or-sorted-and-lambda-functions">Using <code>sort()</code> or <code>sorted()</code> and Lambda Functions</h3>
+<p>Both <code>sort()</code> and <code>sorted()</code> take an optional keyword argument, &ldquo;key&rdquo;, that takes
+a function that determines sorting criteria. However, the two have some important
+differences. <code>sort()</code> is a list method that changes a list in-place. <code>sorted()</code> is a
+built-in function that takes an iterable as an argument and sorts its elements
+out-of-place. This means with <code>sort()</code> the original order of the elements in the
+list is non-recoverable, while <code>sorted()</code> does not alter the original iterable. Also
+keep in mind <code>sorted()</code> is less space efficient because it creates a copy of the input
+iterable.</p>
+<p>The Absolute Value Sort problem does restrict us from changing the input array,
+so I&rsquo;ll use sort(). The challenge is then to figure out how to write the key
+function that will allow us to sort by absolute value, but place negative
+numbers first if two numbers have the same absolute value. We can accomplish this
+by writing a lambda function that will produce a tuple to use as the key. The first value
+of the tuple is the absolute value of the element and the second value is the element.
+If the absolute value (the first element of the key) is the same, then the sorting algorithm
+will default to comparing the second element of the key, the original value of the element.
+This will cause the negative number to always be placed first.</p>
+<p>Both sorting functions use the <a href="https://www.wikiwand.com/en/Timsort">Timsort</a> algorithm
+developed by early Python Core Developer Tim Peters, which has a time complexity of
+O(n log n). This is faster than our O(n^2) solution using Selection Sort.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">absSort</span>(arr):
+</span></span><span style="display:flex;"><span>  arr<span style="color:#f92672">.</span>sort(key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: (abs(x),x))
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> arr 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># not technically a one-liner with sort(), but space complexity is O(1)</span>
+</span></span></code></pre></div><p>Remember that <code>arr.sort(...)</code> will return None, not the sorted list.
+That is why we return arr, not the statement above, which makes this function a &ldquo;two-liner&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">absSort</span>(arr):
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> sorted(arr, key<span style="color:#f92672">=</span><span style="color:#66d9ef">lambda</span> x: (abs(x),x)) 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># space complexity is O(n)</span>
+</span></span></code></pre></div><h3 id="additional-resources">Additional Resources:</h3>
+<ul>
+<li><a href="https://realpython.com/python-sort/">RealPython: How to Use Sorted() and Sort() in Python</a></li>
+<li><a href="https://realpython.com/python-lambda/">RealPython: How to Use Python Lambda Functions</a></li>
+</ul>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright 2025 Charlie Patterson |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div><script>feather.replace()</script>
+</body>
+</html>
