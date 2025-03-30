@@ -1,17 +1,22 @@
 baseURL = "https://clpatterson.github.io/"
 languageCode = "en-us"
 title = "Charlie Patterson"
-theme = "ezhil"
+theme = "ezhil-fork"
 
-copyright = "© Copyright 2020 Charlie Patterson"
+copyright = "© Copyright 2025 Charlie Patterson"
 
 # Enable syntax highlighting.
 pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+# Your Google analytics code.
+# googleAnalytics = ""
+# Your Disqus sortname.
+disqusShortname = ""
+
 # Number of posts to show in recent posts list (Optional). Defaults to 10.
-paginate = 10
+pagination.pagerSize = 10
 
 # Number of characters to show in summary.
 summaryLength = 20
@@ -32,24 +37,19 @@ summaryLength = 20
 
 # Main menu which appears below site header.
 [[menu.main]]
-name = "Home"
+name = "Blog"
 url = "/"
 weight = 1
 
 [[menu.main]]
-name = "All posts"
-url = "/posts"
+name = "Learning Journal"
+url = "/learning-journal"
 weight = 2
 
 [[menu.main]]
 name = "About"
 url = "/about"
 weight = 3
-
-[[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 4
 
 # Social media links which shows up on site header.
 # Uses feather icons for icons. You can [search icon names from here](https://feathericons.com/).
@@ -62,7 +62,3 @@ url = "https://github.com/clpatterson"
 name = "Linkedin"
 icon = "linkedin"
 url = "https://www.linkedin.com/in/pattersoncharlesl/"
-
-# Enable tags.
-[taxonomies]
-   tag = "tags"
