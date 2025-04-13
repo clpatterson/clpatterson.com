@@ -2,7 +2,7 @@ baseURL = "https://clpatterson.github.io/"
 languageCode = "en-us"
 title = "Charlie Patterson"
 theme = "ezhil-fork"
-publishDir = "docs"
+publishDir = "public"
 
 copyright = "© Copyright 2025 Charlie Patterson"
 
@@ -63,3 +63,8 @@ url = "https://github.com/clpatterson"
 name = "Linkedin"
 icon = "linkedin"
 url = "https://www.linkedin.com/in/pattersoncharlesl/"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
