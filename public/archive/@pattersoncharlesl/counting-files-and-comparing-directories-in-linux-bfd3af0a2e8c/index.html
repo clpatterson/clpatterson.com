@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Counting Files and Comparing Directories in Linux - Charlie Patterson</title><meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:url" content="https://www.clpatterson.com/archive/@pattersoncharlesl/counting-files-and-comparing-directories-in-linux-bfd3af0a2e8c/">
+	<meta property="og:url" content="http://localhost:1313/archive/@pattersoncharlesl/counting-files-and-comparing-directories-in-linux-bfd3af0a2e8c/">
   <meta property="og:site_name" content="Charlie Patterson">
   <meta property="og:title" content="Counting Files and Comparing Directories in Linux">
   <meta property="og:description" content="Using pipes, wc, and diffs for cli fun.">
@@ -18,11 +18,11 @@
   <meta name="twitter:description" content="Using pipes, wc, and diffs for cli fun.">
 <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
 
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.clpatterson.com/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.clpatterson.com/css/main.css" /><link rel="stylesheet" type="text/css" href="https://www.clpatterson.com/css/dark.css" media="(prefers-color-scheme: dark)" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" /><link rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" media="(prefers-color-scheme: dark)" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-	<script src="https://www.clpatterson.com/js/main.js"></script>
+	<script src="http://localhost:1313/js/main.js"></script>
 	<script>
 		!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
 		posthog.init('phc_vPZRizP5pO87FNhBZS0CEwDGzqQuUQj0SESQtaBQaRI', {
@@ -35,8 +35,8 @@
 <body>
 	<div class="container wrapper post">
 		<div class="header">
-	<base href="https://www.clpatterson.com/">
-	<h1 class="site-title"><a href="https://www.clpatterson.com/">Charlie Patterson</a></h1>
+	<base href="http://localhost:1313/">
+	<h1 class="site-title"><a href="http://localhost:1313/">Charlie Patterson</a></h1>
 	<div class="site-description"><h2>Bits of code, reflections, and projects for the sake of learning</h2><nav class="nav social">
 			<ul class="flat"><a href="https://github.com/clpatterson" title="Github"><i data-feather="github"></i></a><a href="https://www.linkedin.com/in/pattersoncharlesl/" title="Linkedin"><i data-feather="linkedin"></i></a></ul>
 		</nav>
@@ -50,11 +50,15 @@
 			</li>
 			
 			<li>
-				<a href="/learning-journal">Learning Journal</a>
+				<a href="/learning-journal/">Learning Journal</a>
 			</li>
 			
 			<li>
-				<a href="/about">About</a>
+				<a href="/computing-ppl/">Computing People Map</a>
+			</li>
+			
+			<li>
+				<a href="/about/">About</a>
 			</li>
 			
 		</ul>
@@ -70,15 +74,15 @@
 		<div class="markdown">
 			<p><img src="img/1__GINcfpYew8M2__XS9Jubdhg.gif" alt=""></p>
 <p>I’ve been exploring the /usr directory as a part of a mission to better understand the Linux Filesystem Hierarchy Standard — the topography of the modern server. One question that arose during my travels through the filesystem was how many files are in /bin vs. /user/bin? That’s when I discovered this helpful pipeline.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>ls | wc -l
-</span></span></code></pre></div><p>Pipelines are composed of two or more commands connected with pipes on the command line. The pipe “|” redirects the output of the preceding command into the standard input of the next command, which acts on the data received. In this case, the list of filenames produced by<code>ls</code> is passed to <code>wc -l</code> which counts the number of newlines in the list (i.e. every filename.) The <code>wc</code> command prints the count of newline, words, and bytes of a given file to standard output in that order. Here the <code>-l</code> option limits the count returned to just newlines. Below is the command in action.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>\[user@host /\]$ ls /usr/bin | wc -l  
-</span></span><span style="display:flex;"><span>654
-</span></span></code></pre></div><p>There are 654 files in /usr/bin of my Linux distro before any additional software has been installed. How does this compare to /bin? I could run this same pipeline for /bin and compare the result, but that still wouldn’t tell me if these directories have the same contents. Enter <code>diff</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>\[user@host /\]$ diff /usr/bin /bin
-</span></span></code></pre></div><p><code>diff</code> compares files line by line and outputs the difference. If the command is silent, then the two files are identical (though this behavior can be changed by using one of <code>diff</code>&rsquo;s many options). I ran diff to compare /usr/bin and /bin and got nothing. But what if they share subdirectories with the same name but different contents?</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>\[user@host /\]$ diff -r /usr/bin /bin
-</span></span></code></pre></div><p>Silence. The <code>-r</code> option compared my directories recursively and turned up no differences. Now I feel confident the contents are the same, but my original mission to understand /usr is not complete. Onwards!</p>
+<pre tabindex="0"><code>ls | wc -l
+</code></pre><p>Pipelines are composed of two or more commands connected with pipes on the command line. The pipe “|” redirects the output of the preceding command into the standard input of the next command, which acts on the data received. In this case, the list of filenames produced by<code>ls</code> is passed to <code>wc -l</code> which counts the number of newlines in the list (i.e. every filename.) The <code>wc</code> command prints the count of newline, words, and bytes of a given file to standard output in that order. Here the <code>-l</code> option limits the count returned to just newlines. Below is the command in action.</p>
+<pre tabindex="0"><code>\[user@host /\]$ ls /usr/bin | wc -l  
+654
+</code></pre><p>There are 654 files in /usr/bin of my Linux distro before any additional software has been installed. How does this compare to /bin? I could run this same pipeline for /bin and compare the result, but that still wouldn’t tell me if these directories have the same contents. Enter <code>diff</code>.</p>
+<pre tabindex="0"><code>\[user@host /\]$ diff /usr/bin /bin
+</code></pre><p><code>diff</code> compares files line by line and outputs the difference. If the command is silent, then the two files are identical (though this behavior can be changed by using one of <code>diff</code>&rsquo;s many options). I ran diff to compare /usr/bin and /bin and got nothing. But what if they share subdirectories with the same name but different contents?</p>
+<pre tabindex="0"><code>\[user@host /\]$ diff -r /usr/bin /bin
+</code></pre><p>Silence. The <code>-r</code> option compared my directories recursively and turned up no differences. Now I feel confident the contents are the same, but my original mission to understand /usr is not complete. Onwards!</p>
 <p>(Tips, corrections, or comments are always welcome.)</p>
 
 		</div>
