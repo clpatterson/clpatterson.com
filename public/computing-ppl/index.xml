@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Computing People Map on Charlie Patterson</title>
-    <link>http://localhost:1313/computing-ppl/</link>
+    <link>https://www.clpatterson.com/computing-ppl/</link>
     <description>Recent content in Computing People Map on Charlie Patterson</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© Copyright 2025 Charlie Patterson</copyright>
-    <atom:link href="http://localhost:1313/computing-ppl/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.clpatterson.com/computing-ppl/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
